@@ -1,10 +1,11 @@
-menu={
+Prices={
     "Apples":50,
     "Mango":45,
     "Banana":10,
-    "kiwi":40,
+    "Kiwi":40,
     "Orange":30
 }
+
 cart=[]
 while True:
 # menu list
@@ -14,14 +15,20 @@ while True:
     print("Kiwi,40/pc")
     print("Orange,30rs/kg")
 
-    fruit=input("Add to cart ,choose the fruit or type done : ")
-    if fruit=="done" or fruit=="Done":
+    fruit=input("Add to cart ,choose the fruit or type done : ").title()
+    if fruit=="Done":
         break
-    elif fruit in menu:
-        cart.append(fruit)
+    elif fruit in Prices:
         n=int (input("Enter the quantity: "))
+        cart.append((fruit,n))
+
     else:
         print("Not available")
         # for fruit in menu.values():
 
-print(f"Your cart {cart}")        
+print(f"Your cart {cart}")    
+total=0
+for fruit,n in cart:
+    total+=Prices[fruit]*n
+print(f"Your total bill for this cart is: ₹{total}")
+      
