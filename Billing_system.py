@@ -27,8 +27,10 @@ while True:
         # for fruit in menu.values():
 
 print(f"Your cart {cart}")    
-total=0
+total_bill=0
 for fruit,n in cart:
-    total+=Prices[fruit]*n
-print(f"Your total bill for this cart is: ₹{total}")
+    total=Prices[fruit]*n
+    print(f"{fruit} x {n} = ₹{total}")    
+    total_bill+=total
+print(f"Your total bill for this cart is: ₹{total_bill}")
       
